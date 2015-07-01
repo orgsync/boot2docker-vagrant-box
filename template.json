@@ -3,7 +3,7 @@
         "name": "virtualbox",
         "type": "virtualbox-iso",
         "iso_url": "boot2docker.iso",
-        "iso_checksum": "f38f1e4eb3da5236b4d042913fdbab0b",
+        "iso_checksum": "6b6e5ddb06ade5adcd31194674e49ce7",
         "iso_checksum_type": "md5",
         "boot_wait": "5s",
         "ssh_username": "docker",
@@ -28,7 +28,7 @@
         "name": "parallels",
         "type": "parallels-iso",
         "iso_url": "boot2docker.iso",
-        "iso_checksum": "f38f1e4eb3da5236b4d042913fdbab0b",
+        "iso_checksum": "6b6e5ddb06ade5adcd31194674e49ce7",
         "iso_checksum_type": "md5",
         "boot_wait": "15s",
         "ssh_username": "docker",
@@ -55,7 +55,9 @@
             "sudo /usr/local/etc/init.d/docker stop",
             "sudo /etc/rc.d/automount",
 
-            "mkdir -p /tmp/boot2docker"
+            "mkdir -p /tmp/boot2docker",
+
+            "sudo sh -c 'echo DOCKER_TLS=no > /var/lib/boot2docker/profile'"
         ]
     }, {
         "type": "file",
